@@ -15,6 +15,7 @@ import java.net.URL;
 public class RetrieveFeedTask extends AsyncTask<String, Void, String> {
 
     private Exception exception;
+    public AsyncResponse delegate = null;
 
     protected String doInBackground(String... urls) {
 
@@ -41,9 +42,12 @@ public class RetrieveFeedTask extends AsyncTask<String, Void, String> {
     }
 
     protected void onPostExecute(String resp) {
+        Log.d("ERROR", "got resp: " + resp);
+        delegate.processFinish(resp);
+
         // TODO: check this.exception
         // TODO: do something with the feed
-        Log.d("ERROR", "DBG - resp received: " + resp);
+        // Log.d("ERROR", "DBG - resp received: " + resp);
 //        Toast.makeText(getApplicationContext(), "This is my Toast message!",
 //                Toast.LENGTH_LONG).show();
 //        //final Button btnSleep = (Button)findViewById(R.id.btn_sleep);

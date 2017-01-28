@@ -22,10 +22,10 @@ public class SleepRecord {
 
     @Override
     public String toString() {
-        return "{'timestamp': '" + timestamp+
-                "', 'record_type': '" +recordType+
-                "', 'sleep_with_tits':'" + sleepWithTits+
-                "', 'cried':'" +cry+
-                "', 'eaten_cc': '" +eat_cc+ "'}";
+        return "%7B'timestamp':'"+timestamp+
+                "','record_type':'"+recordType+
+                "','sleep_with_tits':'"+sleepWithTits+
+                "','cried':'"+cry+
+                "','eaten_cc':'"+eat_cc+"'%7D";
     }
 }

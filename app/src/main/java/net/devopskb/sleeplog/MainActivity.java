@@ -22,6 +22,9 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements AsyncResponse{
 
+//    public final String SERVER_URL = "http://10.0.2.2:5000/";
+    public final String SERVER_URL = "http://84.111.154.20:5000/";
+
     // Array of strings...
     String[] ccValues = {"0 cc","10 cc","20 cc","30 cc","40 cc","50 cc","60 cc","70 cc",
             "80 cc","90 cc","100 cc","110 cc","120 cc","130 cc","140 cc","150 cc"};
@@ -89,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse{
                 RetrieveFeedTask task = new RetrieveFeedTask();
                 //this to set delegate/listener back to the parent ( we are inside onClick... )
                 task.delegate = MainActivity.this;
-                task.execute("http://10.0.2.2:5000/sleepws/addrecord/" + record.toString());
+                task.execute(SERVER_URL + "sleepws/addrecord/" + record.toString());
                 Log.d("INFO", "async task created.");
             }
         });
@@ -103,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse{
                 RetrieveFeedTask task = new RetrieveFeedTask();
                 //this to set delegate/listener back to the parent ( we are inside onClick... )
                 task.delegate = MainActivity.this;
-                task.execute("http://10.0.2.2:5000/sleepws/addrecord/" + record.toString());
+                task.execute(SERVER_URL + "sleepws/addrecord/" + record.toString());
                 Log.d("INFO", "async task created.");
             }
         });
@@ -115,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse{
                 RetrieveFeedTask task = new RetrieveFeedTask();
                 //this to set delegate/listener back to the parent ( we are inside onClick... )
                 task.delegate = MainActivity.this;
-                task.execute("http://10.0.2.2:5000/sleepws/getall");
+                task.execute(SERVER_URL + "sleepws/getall");
                 Log.d("INFO", "async task created.");
             }
         });
